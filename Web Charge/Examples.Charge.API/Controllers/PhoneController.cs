@@ -1,6 +1,7 @@
 ﻿using Examples.Charge.Application.Interfaces;
 using Examples.Charge.Application.Messages.Request;
 using Examples.Charge.Application.Messages.Response;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -20,7 +21,7 @@ namespace Examples.Charge.API.Controllers
 
         [HttpGet]
         public ActionResult<Task<IEnumerable<PhoneResponse>>> Get()
-        {
+        {            
             return Ok(_phoneFacade.FindAllAsync().Result);
         }
 
@@ -51,6 +52,12 @@ namespace Examples.Charge.API.Controllers
         public ActionResult<PhoneResponse> Put([FromQuery] PhoneRequest oldPhone, [FromBody] PhoneEditRequest request)
         {
             return Ok(_phoneFacade.Put(oldPhone, request));
+        }
+
+        [HttpGet("types")]
+        public ActionResult<IEnumerable<PhoneTypeResponse>> GetTypes()
+        {
+            return Ok(_phoneFacade.GetTypes());
         }
 
     }

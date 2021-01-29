@@ -19,6 +19,7 @@ namespace Examples.Charge.Application.AutoMapper
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.BusinessEntityID))
                 .ForMember(dest => dest.Number, opt => opt.MapFrom(src => src.PhoneNumber))
                 .ForMember(dest => dest.Owner, opt => opt.MapFrom(src => src.Person.Name))
+                .ForMember(dest => dest.PhoneTypeID, opt => opt.MapFrom(src => src.PhoneNumberType.PhoneNumberTypeID))
                 .ForMember(dest => dest.PhoneType, opt => opt.MapFrom(src => src.PhoneNumberType.Name));
         }
     }

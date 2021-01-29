@@ -39,6 +39,13 @@ namespace Examples.Charge.Application.Facade
             return _mapper.Map<IEnumerable<PhoneResponse>>(phones);
         }
 
+        public IEnumerable<PhoneTypeResponse> GetTypes()
+        {
+            var types = _phoneNumberTypeService.FindAllAsync().Result;
+
+            return _mapper.Map<IEnumerable<PhoneTypeResponse>>(types);
+        }
+
         public PhoneResponse Insert(PhoneRequest request)
         {
             var person = _personService.Find(request.PersonId);

@@ -14,5 +14,6 @@ namespace Examples.Charge.Application.Interfaces
         PhoneResponse Put(PhoneRequest oldPhone, PhoneEditRequest request);
         void Delete(PhoneRequest request);
         Task<IEnumerable<PhoneResponse>> FindAllAsync();
+        IEnumerable<PhoneTypeResponse> GetTypes();
     }
 }

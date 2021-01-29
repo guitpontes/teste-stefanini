@@ -10,6 +10,7 @@ namespace Examples.Charge.Application.Messages.Response
         public int Id { get; set; }
         public string Number { get; set; }
         public string PhoneType { get; set; }
+        public int PhoneTypeID { get; set; }
         public string Owner { get; set; }
     }
 }
