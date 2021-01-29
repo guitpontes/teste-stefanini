@@ -1,0 +1,30 @@
+<div>
+  <label>
+    Phone to Edit:
+    <select [(ngModel)]="validPhone">
+      <option value="">Select a phone to edit...</option>
+      <option *ngFor="let phone of phones" [ngValue]="phone.number">
+        {{ phone.number | uppercase }}
+      </option>
+    </select>
+  </label>
+</div>
+<div>
+  <label>
+    Number:
+    <input type="text" [(ngModel)]="newNumber" />
+  </label>
+
+  <label>
+    Phone Type:
+    <select [(ngModel)]="selectedType">
+      <option value="">Select a type...</option>
+      <option *ngFor="let type of types" [ngValue]="type.name">
+        {{ type.name | titlecase }}
+      </option>
+    </select>
+  </label>
+  <p>
+    <button (click)="update(validPhone, selectedType)">Edit phone</button>
+  </p>
+</div>
