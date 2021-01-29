@@ -2,6 +2,7 @@
 using Examples.Charge.Domain.Aggregates.ExampleAggregate;
 using Examples.Charge.Domain.Aggregates.PersonAggregate;
 using System.Reflection;
+using System.Linq;
 
 namespace Examples.Charge.Infra.Data.Context
 {

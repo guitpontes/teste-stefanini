@@ -1,0 +1,13 @@
+<h1>Stefanini Test</h1>
+
+<nav>
+  <a (click)="toggleEditor('insert')">Phone Insert</a>
+  <a (click)="toggleEditor('edit')">Phone Edit</a>
+  <a (click)="toggleEditor('delete')">Phone Delete</a>
+</nav>
+
+<app-phone-insert *ngIf="showInsert"></app-phone-insert>
+
+<app-phone-edit *ngIf="showEdit"></app-phone-edit>
+
+<app-phone-delete *ngIf="showDelete"></app-phone-delete>

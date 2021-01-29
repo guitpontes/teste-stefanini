@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Examples.Charge.API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/example")]
     [ApiController]
     public class ExampleController : BaseController
     {
@@ -19,7 +19,10 @@ namespace Examples.Charge.API.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<ExampleListResponse>> Get() => Response(await _facade.FindAllAsync());
+        public async Task<ActionResult<ExampleListResponse>> Get()
+        {
+            return await _facade.FindAllAsync();
+        }
 
         [HttpGet("{id}")]
         public ActionResult<string> Get(int id)

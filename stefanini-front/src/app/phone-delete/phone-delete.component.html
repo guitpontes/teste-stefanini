@@ -1,0 +1,14 @@
+<div>
+  <label>
+    Phone to Delete:
+  <select [(ngModel)]="validPhone">
+    <option value="">Select a phone...</option>
+    <option *ngFor="let phone of phones" [ngValue]="phone.number">
+      {{ phone.number | uppercase }}
+    </option>
+  </select>
+  </label>
+  <p>
+    <button (click)="delete(validPhone)">Delete phone</button>
+  </p>
+</div>

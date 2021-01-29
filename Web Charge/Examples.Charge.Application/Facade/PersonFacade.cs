@@ -25,7 +25,11 @@ namespace Examples.Charge.Application.Facade
             var result = await _personService.FindAllAsync();
             var response = new PersonResponse();
             response.PersonObjects = new List<PersonDto>();
-            response.PersonObjects.AddRange(result.Select(x => _mapper.Map<PersonDto>(x)));
+
+            foreach (var person in result)
+            {
+                response.PersonObjects.Add(new PersonDto { Id = person.BusinessEntityID, Name = person.Name, Phones = _mapper.Map<IList<PhoneResponse>>(person.Phones) });
+            }
             return response;
         }
     }

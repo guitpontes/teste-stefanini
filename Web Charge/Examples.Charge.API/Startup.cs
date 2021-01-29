@@ -22,6 +22,7 @@ namespace Examples.Charge.API
         }
 
         public IConfiguration Configuration { get; }
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 
         public void ConfigureServices(IServiceCollection services)
         {
@@ -31,6 +32,7 @@ namespace Examples.Charge.API
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"), b => b.MigrationsAssembly("Examples.Charge.Infra.Data.Configuration"));
             });
+
             NativeInjector.Setup(services);
             services.AddAutoMapper();
 
@@ -70,6 +72,13 @@ namespace Examples.Charge.API
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(c =>
+            {
+                c.AllowAnyHeader();
+                c.AllowAnyMethod();
+                c.AllowAnyOrigin();
+            });
 
             app.UseSwagger();
 
