@@ -1,0 +1,32 @@
+<div>
+  <label>
+    Owner:
+    <select [(ngModel)]="owner">
+      <option value="">Select a person...</option>
+      <option *ngFor="let person of people" [ngValue]="person.name">
+        {{ person.name | titlecase }}
+      </option>
+    </select>
+  </label>
+
+  <label>
+    New Number:
+    <input type="text" [(ngModel)]="number" mask="(00)00000-0000" />
+  </label>
+
+  <label>
+    Phone Type:
+    <select [(ngModel)]="selectedType">
+      <option value="">Select a type...</option>
+      <option *ngFor="let type of types" [ngValue]="type.name">
+        {{ type.name | titlecase }}
+      </option>
+    </select>
+  </label>
+</div>
+
+<p>
+  <button (click)="registerPhone(owner, number, selectedType)">
+    Register phone
+  </button>
+</p>

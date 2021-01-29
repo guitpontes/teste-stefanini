@@ -2,7 +2,50 @@
 # Este arquivo .gitignore foi criado automaticamente pelo Microsoft(R) Visual Studio.
 ################################################################################
 
+/stefanini-front/node_modules
 /.vs
 bin/
 obj/
 *.user
+
+# compiled output
+/stefanini-front/dist
+/stefanini-front/tmp
+/stefanini-front/out-tsc
+
+# dependencies
+/Front-end/node_modules
+
+# profiling files
+chrome-profiler-events.json
+speed-measure-plugin.json
+
+# IDEs and editors
+/stefanini-front/.idea
+/stefanini-front/.project
+/stefanini-front/.classpath
+/stefanini-front/.c9/
+/stefanini-front/*.launch
+/stefanini-front/.settings/
+/stefanini-front/*.sublime-workspace
+
+# IDE - VSCode
+/stefanini-front/.vscode/*
+/stefanini-front/!.vscode/settings.json
+/stefanini-front/!.vscode/tasks.json
+/stefanini-front/!.vscode/launch.json
+/stefanini-front/!.vscode/extensions.json
+
+# misc
+/stefanini-front/.sass-cache
+/stefanini-front/connect.lock
+/stefanini-front/coverage
+/stefanini-front/libpeerconnection.log
+/stefanini-front/npm-debug.log
+/stefanini-front/yarn-error.log
+/stefanini-front/testem.log
+/stefanini-front/typings
+
+# System Files
+.DS_Store
+Thumbs.db
