@@ -14,9 +14,9 @@ namespace Examples.Charge.Domain.Aggregates.PersonAggregate
 
         public int PhoneNumberTypeID { get; set; }
 
-        public Person Person { get; set; }
+        public virtual Person Person { get; set; }
 
-        public PhoneNumberType PhoneNumberType { get; set; }
+        public virtual PhoneNumberType PhoneNumberType { get; set; }
 
         public ICollection<IEventData> DomainEvents => throw new NotImplementedException();
     }

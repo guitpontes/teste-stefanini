@@ -12,7 +12,7 @@ namespace Examples.Charge.Domain.Aggregates.PersonAggregate
 
         public string Name { get; set; }
 
-        public ICollection<PersonPhone> Phones { get; set; }
+        public virtual ICollection<PersonPhone> Phones { get; set; }
 
         public ICollection<IEventData> DomainEvents => throw new NotImplementedException();
     }
