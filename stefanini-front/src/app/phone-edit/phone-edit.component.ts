@@ -39,7 +39,7 @@ export class PhoneEditComponent implements OnInit {
     let typeId = this.types.find(x => x.name == type);
 
     this.request = new PhoneRequest({
-      number: this.newNumber,
+      number: this.formatPhoneNumber(this.newNumber),
       personId: phone.id,
       phoneTypeId: typeId.id
     })
@@ -61,5 +61,14 @@ export class PhoneEditComponent implements OnInit {
     this.getPhones();
     this.selectedType = null;
     this.newNumber = "";
+  }
+
+  formatPhoneNumber(phoneNumberString) {
+    var cleaned = ('' + phoneNumberString).replace(/\D/g, '')
+    var match = cleaned.match(/^(\d{2})(\d{5})(\d{4})$/)
+    if (match) {
+      return '(' + match[1] + ') ' + match[2] + '-' + match[3]
+    }
+    return null
   }
 }

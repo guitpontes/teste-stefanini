@@ -12,7 +12,10 @@
 <div>
   <label>
     Number:
-    <input type="text" [(ngModel)]="newNumber" />
+    <label>
+      New Number:
+      <input type="text" [(ngModel)]="newNumber" mask="(00)00000-0000" />
+    </label>
   </label>
 
   <label>

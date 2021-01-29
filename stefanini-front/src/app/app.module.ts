@@ -8,6 +8,7 @@ import { PhoneEditComponent } from './phone-edit/phone-edit.component';
 import { PhoneDeleteComponent } from './phone-delete/phone-delete.component';
 import { ApiService } from './services/api.service';
 import { HttpClientModule } from '@angular/common/http';
+import { NgxMaskModule } from 'ngx-mask';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     // other imports ...
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    NgxMaskModule.forRoot()
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
